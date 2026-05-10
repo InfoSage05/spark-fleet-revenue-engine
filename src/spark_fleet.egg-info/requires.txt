@@ -1,0 +1,17 @@
+pydantic>=2.7
+httpx>=0.27
+fastapi>=0.111
+uvicorn>=0.29
+
+[dev]
+pytest>=8.2
+pytest-mock>=3.14
+httpx>=0.27
+
+[pdf]
+PyMuPDF>=1.24
+
+[playwright]
+playwright>=1.40
+
+[proxycurl]
