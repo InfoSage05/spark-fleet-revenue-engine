@@ -5,6 +5,7 @@ src/spark_fleet/enrichment.py
 src/spark_fleet/macro_client.py
 src/spark_fleet/pdf_parser.py
 src/spark_fleet/schemas.py
+src/spark_fleet/semantic_chunker.py
 src/spark_fleet/wati.py
 src/spark_fleet/webhook_server.py
 src/spark_fleet/zoho.py
@@ -14,10 +15,16 @@ src/spark_fleet.egg-info/dependency_links.txt
 src/spark_fleet.egg-info/requires.txt
 src/spark_fleet.egg-info/top_level.txt
 src/spark_fleet/adapters/__init__.py
+src/spark_fleet/adapters/apollo_provider.py
+src/spark_fleet/adapters/fallback_people_provider.py
+src/spark_fleet/adapters/free_people_provider.py
+src/spark_fleet/adapters/ocr_provider.py
 src/spark_fleet/adapters/playwright_provider.py
 src/spark_fleet/adapters/proxycurl_provider.py
 tests/test_e2e_pipeline.py
+tests/test_free_people_provider.py
 tests/test_pipeline_contracts.py
 tests/test_real_adapters.py
 tests/test_schemas.py
 tests/test_wati_webhook.py
+tests/test_zoho_skip.py
