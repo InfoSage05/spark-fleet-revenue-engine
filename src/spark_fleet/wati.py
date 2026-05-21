@@ -298,10 +298,22 @@ class WatiDispatcher:
             "Authorization": f"Bearer {self.api_token}",
             "Content-Type":  "application/json",
         }
+        
+        # WATI API expects the recipient's phone number as a query parameter
+        # named 'whatsappNumber', in international format WITHOUT a leading '+' sign.
+        payload_copy = dict(wati_payload)
+        phone = payload_copy.pop("phone_number", "")
+        if not phone:
+            phone = payload_copy.pop("whatsappNumber", "")
+            
+        clean_phone = str(phone).lstrip("+").strip()
+        params = {"whatsappNumber": clean_phone}
+        
         response = httpx.post(
             f"{self.base_url}/api/v1/sendTemplateMessage",
             headers=headers,
-            json=wati_payload,
+            params=params,
+            json=payload_copy,
             timeout=self.timeout_s,
         )
 
